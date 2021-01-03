@@ -1,22 +1,28 @@
 import React, { FunctionComponent } from 'react';
+import { useDispatch } from 'react-redux';
+import { setSortBy } from '../redux/actions/restaurants';
 
-interface ISortBy {
-  title: string;
-  id: number;
-}
+import { ISortBy } from './interfaces/HomeInterface';
 
 const SortPopup: FunctionComponent = () => {
   const [visiblePopup, setVisiblePopup] = React.useState<boolean>(false);
   const [activePopup, setActivePopup] = React.useState<number>(0);
+  const dispatch = useDispatch();
   const sortRef = React.useRef<any>();
   const sortBy: Array<ISortBy> = [
-    { title: 'популярности', id: 0 },
-    { title: 'цене', id: 1 },
+    { title: 'популярности', type: 'rating', order: 'desc', id: 0 },
+    { title: 'цене', type: 'price', order: 'asc', id: 1 },
   ];
 
   const handlePopup = (id: number) => {
     setActivePopup(id);
     setVisiblePopup(false);
+    dispatch(
+      setSortBy({
+        type: sortBy[id].type,
+        order: sortBy[id].order,
+      }),
+    );
   };
 
   const handleOutsideClick = (e: any) => {
@@ -45,7 +51,7 @@ const SortPopup: FunctionComponent = () => {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span onClick={() => setVisiblePopup(true)}>популярности</span>
+        <span onClick={() => setVisiblePopup(true)}>{sortBy[activePopup].title}</span>
       </div>
       {visiblePopup && (
         <div className="sort__popup">

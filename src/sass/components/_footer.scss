@@ -1,0 +1,37 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  padding: 0 125px;
+  height: 150px;
+
+  &__logo {
+    flex: 0;
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      li {
+        margin-left: 25px;
+        margin-right: 25px;
+        font-size: 18px;
+        a {
+          color: #595959;
+          transition: color $duration ease-in-out;
+
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+
+  &__social {
+    i {
+      margin-right: 20px;
+    }
+  }
+}

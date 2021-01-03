@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import { Header } from './components';
+
+import { Footer, Header } from './components';
 import { HomePage } from './components/pages';
 
 const App: FunctionComponent = () => {
@@ -9,7 +10,7 @@ const App: FunctionComponent = () => {
       <div className="content">
         <HomePage />
       </div>
-      <div className="footer"></div>
+      <Footer />
     </div>
   );
 };

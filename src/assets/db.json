@@ -1,0 +1,61 @@
+{
+  "restaurants": [
+    {
+      "name": "Пицца плюс",
+      "imgUrl": "https://www.gastronom.ru/binfiles/images/20191113/bd570867.jpg",
+      "id": 0,
+      "price": 800,
+      "rating": 4.3,
+      "dTime": 50,
+      "type": "Пицца"
+    },
+    {
+      "name": "Тануки",
+      "imgUrl": "https://fugu.ck.ua/wp-content/uploads/2018/03/shutterstock_371217364-giappone.jpg",
+      "id": 1,
+      "price": 900,
+      "rating": 4.1,
+      "dTime": 40,
+      "type": "Японская кухня"
+    },
+    {
+      "name": "FoodBand",
+      "imgUrl": "https://cdn.segodnya.ua/i/image_650x434/media/image/5db/98b/09d/5db98b09d5a51.jpg",
+      "id": 2,
+      "price": 1200,
+      "rating": 4.7,
+      "dTime": 60,
+      "type": "Пицца"
+    },
+    {
+      "name": "Суши бар",
+      "imgUrl":
+        "https://lh3.googleusercontent.com/proxy/ORKGnMA2F9vFW1CZeqyOkSUdpp2BIYYenu2jish7vf6OkZmuYTO6-7aV7Q-qxu27SueWu6AAzH9R6ZB01KlaLvhegnfK",
+      "id": 3,
+      "price": 1500,
+      "rating": 4.8,
+      "dTime": 40,
+      "type": "Японская кухня"
+    },
+    {
+      "name": "Точка еды",
+      "imgUrl":
+        "https://islamosfera.ru/wp-content/uploads/2019/06/%D0%A2%D1%83%D1%80%D0%B5%D1%86%D0%BA%D0%B0%D1%8F-%D0%BA%D1%83%D1%85%D0%BD%D1%8F.jpg",
+      "id": 4,
+      "price": 850,
+      "rating": 4.5,
+      "dTime": 70,
+      "type": "Турецкая кухня"
+    },
+    {
+      "name": "Eat Food",
+      "imgUrl":
+        "https://lh3.googleusercontent.com/proxy/h_8vqTFn6KIsbQjoEtB7zgRhgQj4njgGk9nXQTs885eSxulvis7L86s3ttoBxEwkeGNXdlo8g8f074IlWRssV92UWwQVA2RN2xPorz3xqPsIWRVC5Q",
+      "id": 5,
+      "price": 700,
+      "rating": 4.4,
+      "dTime": 40,
+      "type": "Русская кухня"
+    }
+  ]
+}
