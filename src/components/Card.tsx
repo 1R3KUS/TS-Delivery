@@ -1,4 +1,7 @@
 import React, { FunctionComponent } from 'react';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { activeRestNum } from '../redux/actions/restAction';
 import { IRest } from './interfaces/HomeInterface';
 
 interface CardProps {
@@ -6,8 +9,14 @@ interface CardProps {
 }
 
 const Card: FunctionComponent<CardProps> = ({ item }) => {
+  const dispatch = useDispatch();
+
+  const setActiveRest = (id: number) => {
+    dispatch(activeRestNum(id));
+  };
+
   return (
-    <div className="card">
+    <Link to={`/rest/${item.id}`} className="card" onClick={() => setActiveRest(item.id)}>
       <div className="card__img">
         <img src={item.imgUrl} alt="Restaurant" />
       </div>
@@ -39,7 +48,7 @@ const Card: FunctionComponent<CardProps> = ({ item }) => {
           </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

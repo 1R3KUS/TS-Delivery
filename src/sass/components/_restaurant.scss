@@ -1,0 +1,59 @@
+.restaurant {
+  .restCards {
+    .restCard {
+      width: 385px;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 75px;
+      text-decoration: none;
+      box-shadow: 2px 5px 12px rgba(0, 0, 0, 0.1);
+      color: #000;
+      background: #fff;
+
+      &__img {
+        overflow: hidden;
+
+        img {
+          height: 270px;
+        }
+      }
+
+      &__text {
+        padding: 20px;
+        &-top {
+          margin-bottom: 25px;
+          h1 {
+            font-style: 24px;
+            font-weight: 400;
+            margin-bottom: 10px;
+          }
+
+          p {
+            color: #8c8c8c;
+          }
+        }
+
+        &-bottom {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+
+          h1 {
+            font-size: 22px;
+            font-weight: 500;
+            color: $blue;
+            margin-left: 30px;
+          }
+        }
+      }
+
+      &__button {
+        padding: 7px 35px;
+
+        span {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

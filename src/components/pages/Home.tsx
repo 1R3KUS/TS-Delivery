@@ -13,8 +13,6 @@ const Home: FunctionComponent = () => {
   const dispatch = useDispatch();
   const { rest, isLoading, sortBy } = useSelector((state: any) => state.rests);
 
-  console.log(rest);
-
   React.useEffect(() => {
     dispatch(fetchRest(sortBy));
   }, [sortBy]);
