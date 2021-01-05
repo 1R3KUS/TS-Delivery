@@ -12,6 +12,6 @@ export const setRestItems = (payload: Array<object>) => ({
 
 export const fetchRestItems = (sortBy: any) => (dispatch: Function) => {
   axios
-    .get(`http://localhost:3001/restaurants?id=${sortBy}&_embed=menu`)
+    .get(`/restaurants?id=${sortBy}&_embed=menu`)
     .then(({ data }) => dispatch(setRestItems(data)));
 };
