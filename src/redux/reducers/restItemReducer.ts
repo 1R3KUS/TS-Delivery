@@ -4,6 +4,7 @@ interface IRestReducer {
 }
 
 const initialState = {
+  activeRestItem: [],
   activeItem: 0,
 };
 
@@ -13,6 +14,11 @@ export function restItemsReducer(state = initialState, action: IRestReducer) {
       return {
         ...state,
         activeItem: action.payload,
+      };
+    case 'SET_REST_ITEMS':
+      return {
+        ...state,
+        activeRestItem: action.payload,
       };
     default:
       return state;

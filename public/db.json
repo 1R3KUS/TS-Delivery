@@ -57,7 +57,8 @@
   ],
   "menu": [
     {
-      "name": "Пепперони Фреш с перцем",
+      "name": "Пепперони Фреш",
+      "structure": "Пикантная пепперони, увеличенная порция моцареллы, томаты, томатный соус",
       "id": 0,
       "restaurantId": 0,
       "price": 900,
@@ -65,6 +66,7 @@
     },
     {
       "name": "Сырная",
+      "structure": "Увеличенная порция моцареллы, томатный соус",
       "id": 1,
       "restaurantId": 0,
       "price": 295,
@@ -72,6 +74,7 @@
     },
     {
       "name": "Цыпленок барбекю",
+      "structure": "Цыпленок, соус барбекю, томатный соус, красный лук, моцарелла, бекон",
       "id": 2,
       "restaurantId": 0,
       "price": 445,
@@ -79,23 +82,26 @@
     },
     {
       "name": "Кисло-сладкий цыпленок",
+      "structure": "Цыпленок, томатный соус, моцарелла, кисло-сладкий соус",
       "id": 3,
       "restaurantId": 0,
       "price": 375,
       "imgUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/af553bf5-3887-4501-b88e-8f0f55229429.jpg"
     },
     {
-      "name": "Крэйзи пепперони",
+      "name": "Чизбургер-пицца",
+      "structure": "Мясной соус болоньезе, моцарелла, красный лук, соленые огурчики, томаты, соус бургер",
       "id": 4,
       "restaurantId": 0,
-      "price": 580,
-      "imgUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/1e1a6e80-b3ba-4a44-b6b9-beae5b1fbf27.jpg"
+      "price": 395,
+      "imgUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
     },
     {
       "name": "Маргарита",
+      "structure": "Увеличенная порция моцареллы, томаты, итальянские травы, томатный соус",
       "id": 5,
       "restaurantId": 0,
-      "price": 450,
+      "price": 345,
       "imgUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg"
     },
     {

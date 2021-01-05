@@ -1,7 +1,43 @@
 .restaurant {
+  padding-top: 75px;
+  margin-right: 12%;
+  margin-left: 12%;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 75px;
+  }
+
+  &__name,
+  &__rating,
+  &__tipe {
+    margin-right: 25px;
+  }
+
+  &__name {
+    font-size: 36px;
+  }
+
+  &__rating {
+    font-size: 18px;
+    color: #ffc107;
+  }
+
+  &__type {
+    font-size: 18px;
+    color: #8c8c8c;
+  }
+
   .restCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 75px;
+
     .restCard {
       width: 385px;
+      height: 545px;
       overflow: hidden;
       border-radius: 10px;
       margin-bottom: 75px;
@@ -12,6 +48,9 @@
 
       &__img {
         overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         img {
           height: 270px;
@@ -19,6 +58,10 @@
       }
 
       &__text {
+        height: 270px;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
         padding: 20px;
         &-top {
           margin-bottom: 25px;

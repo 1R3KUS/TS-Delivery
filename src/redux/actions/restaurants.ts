@@ -23,7 +23,7 @@ interface ISortBy {
 
 export const fetchRest = (sortBy: ISortBy) => (dispatch: Function) => {
   dispatch(setLoading(false));
-  axios
-    .get(`/restaurants?_sort=${sortBy.type}&_order=${sortBy.order}`)
-    .then(({ data }) => dispatch(setRest(data)));
+  axios.get(`/restaurants?_sort=${sortBy.type}&_order=${sortBy.order}`).then(({ data }) => {
+    dispatch(setRest(data));
+  });
 };

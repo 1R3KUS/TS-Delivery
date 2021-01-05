@@ -6,10 +6,7 @@ import { Footer, Header } from './components';
 import { HomePage, Restaurant } from './components/pages';
 
 const App: FunctionComponent = () => {
-  const { rest } = useSelector((state: any) => state.rests);
-  const { activeItem } = useSelector((state: any) => state.activeRests);
-
-  const activeRest = rest.filter((item: any) => item.id === activeItem);
+  const { activeRestItem, activeItem } = useSelector((state: any) => state.activeRests);
 
   return (
     <div className="App">
@@ -19,7 +16,7 @@ const App: FunctionComponent = () => {
         <Route
           exact
           path={`/rest/${activeItem}`}
-          render={() => <Restaurant items={activeRest} />}
+          render={() => <Restaurant activeRestItem={activeRestItem} activeItem={activeItem} />}
         />
       </div>
       <Footer />
