@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { activeRestNum } from '../redux/actions/restAction';
-import { IRest } from './interfaces/HomeInterface';
+import { activeRestNum } from '../../redux/actions/restAction';
+import { IRest } from '../interfaces/HomeInterface';
 
 interface CardProps {
   item: IRest;

@@ -43,12 +43,12 @@ const Footer: FunctionComponent = () => {
             <a href="/">Курьерам</a>
           </li>
           <li>
-            <a href="/">Контакты</a>
+            <a href="">Контакты</a>
           </li>
         </ul>
       </div>
       <div className="footer__social">
-        <a href="/">
+        <a href="https://www.instagram.com/" target="_blank">
           <i>
             <svg
               width="30"
@@ -65,7 +65,7 @@ const Footer: FunctionComponent = () => {
             </svg>
           </i>
         </a>
-        <a href="/">
+        <a href="https://vk.com/" target="_blank">
           <i>
             <svg
               width="30"
@@ -82,7 +82,7 @@ const Footer: FunctionComponent = () => {
             </svg>
           </i>
         </a>
-        <a href="/">
+        <a href="https://www.facebook.com/" target="_blank">
           <i>
             <svg
               width="30"

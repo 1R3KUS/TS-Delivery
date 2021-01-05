@@ -13,8 +13,8 @@
       "name": "Тануки",
       "imgUrl": "https://fugu.ck.ua/wp-content/uploads/2018/03/shutterstock_371217364-giappone.jpg",
       "id": 1,
-      "price": 250,
-      "rating": 4.1,
+      "price": 95,
+      "rating": 4.6,
       "dTime": 40,
       "type": "Японская кухня"
     },
@@ -31,7 +31,7 @@
       "name": "Суши бар",
       "imgUrl": "https://www.kailash.ru/img/2020/japan/eat-serv.jpg",
       "id": 3,
-      "price": 295,
+      "price": 245,
       "rating": 4.8,
       "dTime": 40,
       "type": "Японская кухня"
@@ -41,7 +41,7 @@
       "imgUrl": "https://islamosfera.ru/wp-content/uploads/2019/06/%D0%A2%D1%83%D1%80%D0%B5%D1%86%D0%BA%D0%B0%D1%8F-%D0%BA%D1%83%D1%85%D0%BD%D1%8F.jpg",
       "id": 4,
       "price": 495,
-      "rating": 4.5,
+      "rating": 4.4,
       "dTime": 70,
       "type": "Турецкая кухня"
     },
@@ -50,7 +50,7 @@
       "imgUrl": "https://cdn.iz.ru/sites/default/files/styles/1920x1080/public/article-2019-01/Depositphotos_170248520_xl-2015.jpg?itok=JQKMYhdx",
       "id": 5,
       "price": 345,
-      "rating": 4.4,
+      "rating": 4.2,
       "dTime": 40,
       "type": "Русская кухня"
     }
@@ -151,6 +151,78 @@
       "restaurantId": 3,
       "price": 325,
       "imgUrl": "https://images.sushishop.ru/assets/images/cache/docs/17669/roll-arigato-580h389.jpg/1592157185/580x389.webp"
+    },
+    {
+      "name": "Кукурузный крем-суп",
+      "structure": "Рыбный бульон, кукуруза, сливки, сливочный сыр, лук фрай, тигровая креветка",
+      "id": 12,
+      "restaurantId": 1,
+      "price": 145,
+      "imgUrl": "https://images.sushishop.ru/assets/images/cache/docs/17677/kukuruznyj-krem-sup-580h389.jpg/1592159913/580x389.webp"
+    },
+    {
+      "name": "Ролл Запеченный с мидиями",
+      "structure": "Мидии, омлет Тамаго, огурец, сливочный сыр, зеленый лук, розовый соус, соус Унаги, кунжут",
+      "id": 13,
+      "restaurantId": 1,
+      "price": 219,
+      "imgUrl": "https://images.sushishop.ru/assets/images/cache/docs/412/zapechennyj-roll-s-midiyami-580h389.jpg/1592158133/580x389.webp"
+    },
+    {
+      "name": "Мисо суп",
+      "structure": "Мисо-бульон, Тофу, вакамэ, зелёный лук",
+      "id": 14,
+      "restaurantId": 1,
+      "price": 95,
+      "imgUrl": "https://images.sushishop.ru/assets/images/cache/docs/80/miso-sup-580h389.jpg/1592159974/580x389.webp"
+    },
+    {
+      "name": "Острые суши с лососем",
+      "structure": "Лосось, соус Спайси.",
+      "id": 15,
+      "restaurantId": 1,
+      "price": 105,
+      "imgUrl": "https://images.sushishop.ru/assets/images/cache/docs/417/ostrye-sushi-s-lososem-580h389.jpg/1592161431/580x389.webp"
+    },
+    {
+      "name": "Поке с тунцом и соусом Манго",
+      "structure": "Тунец, рис, авокадо, бобы Эдамаме, кукуруза, огурец, лук фрай, соус манго, Поке-соус",
+      "id": 19,
+      "restaurantId": 1,
+      "price": 295,
+      "imgUrl": "https://images.sushishop.ru/assets/images/cache/docs/1437/poke-s-tuncom-580h389.jpg/1592160100/580x389.webp"
+    },
+    {
+      "name": "Суши с угрем",
+      "structure": "Угорь, соус Унаги, кунжут",
+      "id": 17,
+      "restaurantId": 1,
+      "price": 95,
+      "imgUrl": "https://images.sushishop.ru/assets/images/cache/docs/52/sushi-s-ugrem-580h389.jpg/1592161623/580x389.webp"
+    },
+    {
+      "name": "Поке с тигровыми креветками",
+      "structure": "Тигровая креветка, рис, авокадо, бобы Эдамаме, кукуруза, огурец, лук фрай, соус манго, Спайси-соус",
+      "id": 18,
+      "restaurantId": 1,
+      "price": 285,
+      "imgUrl": "https://images.sushishop.ru/assets/images/cache/docs/17679/poke-s-krevetkoj-580h389.jpg/1592160054/580x389.webp"
+    },
+    {
+      "name": "Суши с лососем",
+      "structure": "Лосось",
+      "id": 16,
+      "restaurantId": 1,
+      "price": 95,
+      "imgUrl": "https://images.sushishop.ru/assets/images/cache/docs/51/sushi-s-lososem-580h389.jpg/1592161582/580x389.webp"
+    },
+    {
+      "name": "Куриный шницель",
+      "structure": "Бедро куриное, кляр, сухари, рис, морковь, китайская капуста, зелёный лук, майонез, соус WOK, кунжут",
+      "id": 20,
+      "restaurantId": 1,
+      "price": 215,
+      "imgUrl": "https://images.sushishop.ru/assets/images/cache/docs/77/kurinyj-shnicel-580h389.jpg/1592158738/580x389.webp"
     }
   ]
 }

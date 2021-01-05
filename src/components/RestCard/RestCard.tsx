@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Button } from '.';
+import { Button } from '../';
 
 interface IRestCard {
   name: string;

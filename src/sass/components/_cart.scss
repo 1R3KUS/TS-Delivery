@@ -1,0 +1,135 @@
+.cart {
+  padding: 150px 350px;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 95px;
+
+    i {
+      svg {
+        width: 30px;
+        height: 30px;
+        path {
+          fill: #000;
+        }
+      }
+    }
+
+    span {
+      font-size: 32px;
+      margin-left: 20px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 1000px;
+    height: 85px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #fff;
+    padding-right: 50px;
+    margin-bottom: 20px;
+    box-shadow: 2px 5px 12px rgba(0, 0, 0, 0.1);
+
+    &-sides {
+      display: flex;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0 30px 0 50px;
+      font-size: 22px;
+      font-weight: 400;
+    }
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 120px;
+    height: 85px;
+    border-radius: 5px;
+
+    img {
+      width: 130px;
+    }
+  }
+
+  &__math-btns {
+    display: flex;
+    align-items: center;
+
+    span {
+      font-size: 22px;
+      margin: 0 15px;
+    }
+  }
+
+  &__delete-btn,
+  .minus,
+  .plus {
+    cursor: pointer;
+    padding: 3px 4px 0px 4px;
+    border: 1px solid $blue;
+    border-radius: 50%;
+    transition: background $duration ease-in-out;
+
+    i {
+      svg {
+        fill: $blue;
+      }
+    }
+
+    &:hover {
+      background: $blue;
+
+      i {
+        svg {
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: 100px;
+  }
+  &__sum,
+  &__btns {
+    margin-top: 30px;
+  }
+
+  &__sum {
+    display: flex;
+    justify-content: space-between;
+    h1 {
+      font-size: 26px;
+      span {
+        margin: 0;
+        font-size: 26px;
+        color: $blue;
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__pay-btn {
+    padding: 12px 30px;
+  }
+}

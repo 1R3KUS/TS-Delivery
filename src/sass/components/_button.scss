@@ -9,6 +9,10 @@
   transition: background-color $duration ease-in-out, border-color $duration ease-in-out;
   border: 1px solid transparent;
 
+  .cart-icon {
+    margin-top: 5px;
+  }
+
   &,
   span {
     color: #fff;

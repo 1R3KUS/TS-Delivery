@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import { RestCard } from '..';
-import { IRest } from '../interfaces/HomeInterface';
-import { useDispatch } from 'react-redux';
+import { RestCard, RestCardLoading } from '..';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchRestItems } from '../../redux/actions/restAction';
 
 interface IRestaurant {
@@ -11,15 +10,13 @@ interface IRestaurant {
 
 const Restaurant: FunctionComponent<IRestaurant> = ({ activeRestItem, activeItem }) => {
   const dispatch = useDispatch();
+  const isLoading = useSelector((state: any) => state.rests.isLoading);
 
   React.useEffect(() => {
     dispatch(fetchRestItems(activeItem));
   }, [activeItem]);
 
   const [activeRest] = activeRestItem.map((item: any) => item);
-
-  console.log('Array: ', activeRest && activeRest.name);
-  console.log('activeRestItem: ', activeRestItem);
 
   return (
     <div className="restaurant">
@@ -48,7 +45,11 @@ const Restaurant: FunctionComponent<IRestaurant> = ({ activeRestItem, activeItem
         </div>
       )}
       <div className="restCards">
-        {activeRest && activeRest.menu.map((item: any) => <RestCard {...item} key={item.id} />)}
+        {isLoading && activeRest
+          ? activeRest.menu.map((item: any) => <RestCard {...item} key={item.id} />)
+          : Array(6)
+              .fill(0)
+              .map((_, index) => <RestCardLoading key={index} />)}
       </div>
     </div>
   );
