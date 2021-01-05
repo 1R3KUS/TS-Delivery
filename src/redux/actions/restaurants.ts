@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import { IRest } from '../../components/interfaces/HomeInterface';
 
 export const setRest = (items: Array<IRest>) => ({
