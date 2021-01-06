@@ -5,10 +5,20 @@ interface IRestCard {
   name: string;
   structure: string;
   price: number;
+  id: number;
   imgUrl: string;
+  item: object;
+  onAddCartItem(obj: object): void;
 }
 
-const RestCard: FunctionComponent<IRestCard> = ({ name, structure, price, imgUrl }) => {
+const RestCard: FunctionComponent<IRestCard> = ({
+  onAddCartItem,
+  item,
+  name,
+  structure,
+  price,
+  imgUrl,
+}) => {
   return (
     <div className="restCard">
       <div className="restCard__img">
@@ -20,7 +30,9 @@ const RestCard: FunctionComponent<IRestCard> = ({ name, structure, price, imgUrl
           <p>{structure}</p>
         </div>
         <div className="restCard__text-bottom">
-          <Button className="button-outline button-cart restCard__button">
+          <Button
+            className="button-outline button-cart restCard__button"
+            onClick={() => onAddCartItem(item)}>
             <span>В корзину</span>
           </Button>
           <h1>{price} ₽</h1>

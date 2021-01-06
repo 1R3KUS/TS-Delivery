@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { RestCard, RestCardLoading } from '..';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRestItems } from '../../redux/actions/restAction';
+import { setCartItem } from '../../redux/actions/cartAction';
 
 interface IRestaurant {
   activeRestItem: Array<object>;
@@ -11,12 +12,15 @@ interface IRestaurant {
 const Restaurant: FunctionComponent<IRestaurant> = ({ activeRestItem, activeItem }) => {
   const dispatch = useDispatch();
   const isLoading = useSelector((state: any) => state.rests.isLoading);
+  const [activeRest] = activeRestItem.map((item: any) => item);
+
+  const onAddCartItem = (obj: object) => {
+    dispatch(setCartItem(obj));
+  };
 
   React.useEffect(() => {
     dispatch(fetchRestItems(activeItem));
   }, [activeItem]);
-
-  const [activeRest] = activeRestItem.map((item: any) => item);
 
   return (
     <div className="restaurant">
@@ -46,7 +50,9 @@ const Restaurant: FunctionComponent<IRestaurant> = ({ activeRestItem, activeItem
       )}
       <div className="restCards">
         {isLoading && activeRest
-          ? activeRest.menu.map((item: any) => <RestCard {...item} key={item.id} />)
+          ? activeRest.menu.map((item: any) => (
+              <RestCard item={item} {...item} key={item.id} onAddCartItem={onAddCartItem} />
+            ))
           : Array(6)
               .fill(0)
               .map((_, index) => <RestCardLoading key={index} />)}

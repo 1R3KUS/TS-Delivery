@@ -81,13 +81,15 @@
   .minus,
   .plus {
     cursor: pointer;
-    padding: 3px 4px 0px 4px;
+    padding: 4.5px 6px 1.5px 6px;
     border: 1px solid $blue;
     border-radius: 50%;
     transition: background $duration ease-in-out;
 
     i {
       svg {
+        width: 14px;
+        height: 14px;
         fill: $blue;
       }
     }
@@ -101,6 +103,10 @@
         }
       }
     }
+  }
+
+  &__totalPrice {
+    width: 75px;
   }
 
   &__footer {

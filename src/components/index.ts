@@ -6,3 +6,4 @@ export { default as Card } from './Card/Card';
 export { default as CardLoading } from './Card/CardLoading';
 export { default as RestCardLoading } from './RestCard/RestCardLoading';
 export { default as RestCard } from './RestCard/RestCard';
+export { default as CartItem } from './CartItem/CartItem';

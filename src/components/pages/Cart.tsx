@@ -1,8 +1,13 @@
 import React, { FunctionComponent } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Button } from '..';
+import { Button, CartItem } from '..';
 
 const Cart: FunctionComponent = () => {
+  const { cartItems, totalCount, totalPrice } = useSelector((state: any) => state.cart);
+
+  const cartItemsForMap = Object.keys(cartItems).map((key) => cartItems[key].items[0]);
+
   return (
     <div className="cart">
       <div className="cart__title">
@@ -22,239 +27,43 @@ const Cart: FunctionComponent = () => {
         <span>Корзина</span>
       </div>
 
-      <div className="cart__items">
-        <div className="cart__item">
-          <div className="cart__item-sides">
-            <div className="cart__img">
-              <img
-                src="https://images.sushishop.ru/assets/images/cache/docs/472/roll-slivochnyj-losos-580h389.jpg/1592157244/580x389.webp"
-                alt="Роллы"
-              />
-            </div>
-            <h1>Калифорния с лососем</h1>
+      {cartItemsForMap.length >= 1 ? (
+        <>
+          <div className="cart__items">
+            {cartItemsForMap &&
+              cartItemsForMap.map((cartItem: any, index: number) => (
+                <CartItem
+                  cartItem={cartItem}
+                  key={index}
+                  totalPrice={cartItems[cartItem.id].totalPrice}
+                  totalCount={cartItems[cartItem.id].items.length}
+                />
+              ))}
           </div>
-          <div className="cart__item-sides">
-            <div className="cart__math-btns">
-              <div className="minus">
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20">
-                    <rect width="16" height="2" x="2" y="9" fillRule="evenodd" rx="1" />
-                  </svg>
-                </i>
-              </div>
-              <span>1</span>
-              <div className="plus">
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M10,2 C10.5522847,2 11,2.44771525 11,3 L11,9 L17,9 C17.5522847,9 18,9.44771525 18,10 C18,10.5522847 17.5522847,11 17,11 L11,11 L11,17 C11,17.5522847 10.5522847,18 10,18 C9.44771525,18 9,17.5522847 9,17 L9,11 L3,11 C2.44771525,11 2,10.5522847 2,10 C2,9.44771525 2.44771525,9 3,9 L9,9 L9,3 C9,2.44771525 9.44771525,2 10,2 Z"
-                    />
-                  </svg>
-                </i>
-              </div>
-            </div>
-            <h1>295 ₽</h1>
-            <div className="cart__delete-btn">
-              <i>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                  <path
-                    fillRule="evenodd"
-                    d="M11.4141,10 L15.7071,5.707 C16.0981,5.316 16.0981,4.684 15.7071,4.293 C15.3161,3.902 14.6841,3.902 14.2931,4.293 L10.0001,8.586 L5.7071,4.293 C5.3161,3.902 4.6841,3.902 4.2931,4.293 C3.9021,4.684 3.9021,5.316 4.2931,5.707 L8.5861,10 L4.2931,14.293 C3.9021,14.684 3.9021,15.316 4.2931,15.707 C4.4881,15.902 4.7441,16 5.0001,16 C5.2561,16 5.5121,15.902 5.7071,15.707 L10.0001,11.414 L14.2931,15.707 C14.4881,15.902 14.7441,16 15.0001,16 C15.2561,16 15.5121,15.902 15.7071,15.707 C16.0981,15.316 16.0981,14.684 15.7071,14.293 L11.4141,10 Z"
-                  />
-                </svg>
-              </i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="cart__items">
-        <div className="cart__item">
-          <div className="cart__item-sides">
-            <div className="cart__img">
-              <img
-                src="https://images.sushishop.ru/assets/images/cache/docs/472/roll-slivochnyj-losos-580h389.jpg/1592157244/580x389.webp"
-                alt="Роллы"
-              />
-            </div>
-            <h1>Калифорния с лососем</h1>
-          </div>
-          <div className="cart__item-sides">
-            <div className="cart__math-btns">
-              <div className="minus">
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20">
-                    <rect width="16" height="2" x="2" y="9" fillRule="evenodd" rx="1" />
-                  </svg>
-                </i>
-              </div>
-              <span>1</span>
-              <div className="plus">
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M10,2 C10.5522847,2 11,2.44771525 11,3 L11,9 L17,9 C17.5522847,9 18,9.44771525 18,10 C18,10.5522847 17.5522847,11 17,11 L11,11 L11,17 C11,17.5522847 10.5522847,18 10,18 C9.44771525,18 9,17.5522847 9,17 L9,11 L3,11 C2.44771525,11 2,10.5522847 2,10 C2,9.44771525 2.44771525,9 3,9 L9,9 L9,3 C9,2.44771525 9.44771525,2 10,2 Z"
-                    />
-                  </svg>
-                </i>
-              </div>
-            </div>
-            <h1>295 ₽</h1>
-            <div className="cart__delete-btn">
-              <i>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                  <path
-                    fillRule="evenodd"
-                    d="M11.4141,10 L15.7071,5.707 C16.0981,5.316 16.0981,4.684 15.7071,4.293 C15.3161,3.902 14.6841,3.902 14.2931,4.293 L10.0001,8.586 L5.7071,4.293 C5.3161,3.902 4.6841,3.902 4.2931,4.293 C3.9021,4.684 3.9021,5.316 4.2931,5.707 L8.5861,10 L4.2931,14.293 C3.9021,14.684 3.9021,15.316 4.2931,15.707 C4.4881,15.902 4.7441,16 5.0001,16 C5.2561,16 5.5121,15.902 5.7071,15.707 L10.0001,11.414 L14.2931,15.707 C14.4881,15.902 14.7441,16 15.0001,16 C15.2561,16 15.5121,15.902 15.7071,15.707 C16.0981,15.316 16.0981,14.684 15.7071,14.293 L11.4141,10 Z"
-                  />
-                </svg>
-              </i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="cart__items">
-        <div className="cart__item">
-          <div className="cart__item-sides">
-            <div className="cart__img">
-              <img
-                src="https://images.sushishop.ru/assets/images/cache/docs/472/roll-slivochnyj-losos-580h389.jpg/1592157244/580x389.webp"
-                alt="Роллы"
-              />
-            </div>
-            <h1>Калифорния с лососем</h1>
-          </div>
-          <div className="cart__item-sides">
-            <div className="cart__math-btns">
-              <div className="minus">
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20">
-                    <rect width="16" height="2" x="2" y="9" fillRule="evenodd" rx="1" />
-                  </svg>
-                </i>
-              </div>
-              <span>1</span>
-              <div className="plus">
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M10,2 C10.5522847,2 11,2.44771525 11,3 L11,9 L17,9 C17.5522847,9 18,9.44771525 18,10 C18,10.5522847 17.5522847,11 17,11 L11,11 L11,17 C11,17.5522847 10.5522847,18 10,18 C9.44771525,18 9,17.5522847 9,17 L9,11 L3,11 C2.44771525,11 2,10.5522847 2,10 C2,9.44771525 2.44771525,9 3,9 L9,9 L9,3 C9,2.44771525 9.44771525,2 10,2 Z"
-                    />
-                  </svg>
-                </i>
-              </div>
-            </div>
-            <h1>295 ₽</h1>
-            <div className="cart__delete-btn">
-              <i>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                  <path
-                    fillRule="evenodd"
-                    d="M11.4141,10 L15.7071,5.707 C16.0981,5.316 16.0981,4.684 15.7071,4.293 C15.3161,3.902 14.6841,3.902 14.2931,4.293 L10.0001,8.586 L5.7071,4.293 C5.3161,3.902 4.6841,3.902 4.2931,4.293 C3.9021,4.684 3.9021,5.316 4.2931,5.707 L8.5861,10 L4.2931,14.293 C3.9021,14.684 3.9021,15.316 4.2931,15.707 C4.4881,15.902 4.7441,16 5.0001,16 C5.2561,16 5.5121,15.902 5.7071,15.707 L10.0001,11.414 L14.2931,15.707 C14.4881,15.902 14.7441,16 15.0001,16 C15.2561,16 15.5121,15.902 15.7071,15.707 C16.0981,15.316 16.0981,14.684 15.7071,14.293 L11.4141,10 Z"
-                  />
-                </svg>
-              </i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="cart__items">
-        <div className="cart__item">
-          <div className="cart__item-sides">
-            <div className="cart__img">
-              <img
-                src="https://images.sushishop.ru/assets/images/cache/docs/472/roll-slivochnyj-losos-580h389.jpg/1592157244/580x389.webp"
-                alt="Роллы"
-              />
-            </div>
-            <h1>Калифорния с лососем</h1>
-          </div>
-          <div className="cart__item-sides">
-            <div className="cart__math-btns">
-              <div className="minus">
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20">
-                    <rect width="16" height="2" x="2" y="9" fillRule="evenodd" rx="1" />
-                  </svg>
-                </i>
-              </div>
-              <span>1</span>
-              <div className="plus">
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M10,2 C10.5522847,2 11,2.44771525 11,3 L11,9 L17,9 C17.5522847,9 18,9.44771525 18,10 C18,10.5522847 17.5522847,11 17,11 L11,11 L11,17 C11,17.5522847 10.5522847,18 10,18 C9.44771525,18 9,17.5522847 9,17 L9,11 L3,11 C2.44771525,11 2,10.5522847 2,10 C2,9.44771525 2.44771525,9 3,9 L9,9 L9,3 C9,2.44771525 9.44771525,2 10,2 Z"
-                    />
-                  </svg>
-                </i>
-              </div>
-            </div>
-            <h1>295 ₽</h1>
-            <div className="cart__delete-btn">
-              <i>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                  <path
-                    fillRule="evenodd"
-                    d="M11.4141,10 L15.7071,5.707 C16.0981,5.316 16.0981,4.684 15.7071,4.293 C15.3161,3.902 14.6841,3.902 14.2931,4.293 L10.0001,8.586 L5.7071,4.293 C5.3161,3.902 4.6841,3.902 4.2931,4.293 C3.9021,4.684 3.9021,5.316 4.2931,5.707 L8.5861,10 L4.2931,14.293 C3.9021,14.684 3.9021,15.316 4.2931,15.707 C4.4881,15.902 4.7441,16 5.0001,16 C5.2561,16 5.5121,15.902 5.7071,15.707 L10.0001,11.414 L14.2931,15.707 C14.4881,15.902 14.7441,16 15.0001,16 C15.2561,16 15.5121,15.902 15.7071,15.707 C16.0981,15.316 16.0981,14.684 15.7071,14.293 L11.4141,10 Z"
-                  />
-                </svg>
-              </i>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div className="cart__footer">
-        <div className="cart__sum">
-          <h1>
-            Всего блюд: <span>4</span>
-          </h1>
-          <h1>
-            Сумма заказа: <span>995 ₽</span>
-          </h1>
+          <div className="cart__footer">
+            <div className="cart__sum">
+              <h1>
+                Всего блюд: <span>{totalCount}</span>
+              </h1>
+              <h1>
+                Сумма заказа: <span>{totalPrice} ₽</span>
+              </h1>
+            </div>
+            <div className="cart__btns">
+              <Link to="/">
+                <Button className="button-outline button-cart">Вернуться назад</Button>
+              </Link>
+              <Button className="cart__pay-btn">Оплатить сейчас</Button>
+            </div>
+          </div>
+        </>
+      ) : (
+        <div className="cart__empty">
+          <h1>Корзина пустая</h1>
+          <p>Перейдите на главную страницу для выбора блюда </p>
         </div>
-        <div className="cart__btns">
-          <Link to="/">
-            <Button className="button-outline button-cart">Вернуться назад</Button>
-          </Link>
-          <Button className="cart__pay-btn">Оплатить сейчас</Button>
-        </div>
-      </div>
+      )}
     </div>
   );
 };

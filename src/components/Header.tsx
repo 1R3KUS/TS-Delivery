@@ -1,8 +1,11 @@
 import React, { FunctionComponent } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Button } from '../components';
 
 const Header: FunctionComponent = () => {
+  const { totalCount, totalPrice } = useSelector((state: any) => state.cart);
+
   return (
     <div className="header">
       <Link to="/" className="header__logo">
@@ -52,9 +55,9 @@ const Header: FunctionComponent = () => {
               </svg>
             </i>
           </div>
-          <span className="sum">1</span>
+          <span className="sum">{totalCount}</span>
           <div className="button__delimiter"></div>
-          <span>4431 ₽</span>
+          <span>{totalPrice} ₽</span>
         </Button>
       </Link>
     </div>
