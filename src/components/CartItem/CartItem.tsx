@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { useDispatch } from 'react-redux';
-import { deleteCartItem } from '../../redux/actions/cartAction';
+import { deleteCartItem, minusCartItem, plusCartItem } from '../../redux/actions/cartAction';
 import { ICartItem } from '../interfaces/CartInterface';
 
 interface ICartItemProps {
@@ -18,6 +18,14 @@ const CartItem: FunctionComponent<ICartItemProps> = ({ cartItem, totalPrice, tot
     }
   };
 
+  const onPlusItem = () => {
+    dispatch(plusCartItem(cartItem.id));
+  };
+
+  const onMinusItem = () => {
+    dispatch(minusCartItem(cartItem.id));
+  };
+
   return (
     <div className="cart__item">
       <div className="cart__item-sides">
@@ -28,7 +36,7 @@ const CartItem: FunctionComponent<ICartItemProps> = ({ cartItem, totalPrice, tot
       </div>
       <div className="cart__item-sides">
         <div className="cart__math-btns">
-          <div className="minus">
+          <div className="minus" onClick={onMinusItem}>
             <i>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                 <rect width="16" height="2" x="2" y="9" fillRule="evenodd" rx="1" />
@@ -36,7 +44,7 @@ const CartItem: FunctionComponent<ICartItemProps> = ({ cartItem, totalPrice, tot
             </i>
           </div>
           <span>{totalCount}</span>
-          <div className="plus">
+          <div className="plus" onClick={onPlusItem}>
             <i>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                 <path

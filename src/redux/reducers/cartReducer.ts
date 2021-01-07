@@ -82,6 +82,56 @@ export const cartReducer = (state = initialState, action: ICartReducer) => {
       };
     }
 
+    case 'PLUS_CART_ITEM': {
+      const newState = [
+        ...state.cartItems[action.payload].items,
+        state.cartItems[action.payload].items[0],
+      ];
+
+      const newItems = {
+        ...state.cartItems,
+        [action.payload]: {
+          items: newState,
+          totalPrice: getTotalPrice(newState),
+        },
+      };
+
+      const currentTotalCount = getTotalSum(newItems, 'items.length');
+      const currentTotalPrice = getTotalSum(newItems, 'totalPrice');
+
+      return {
+        ...state,
+        cartItems: newItems,
+        totalCount: currentTotalCount,
+        totalPrice: currentTotalPrice,
+      };
+    }
+
+    case 'MINUS_CART_ITEM': {
+      const oldItems = state.cartItems[action.payload].items;
+
+      const newObjItems =
+        oldItems.length > 1 ? state.cartItems[action.payload].items.slice(1) : oldItems;
+
+      const newItems = {
+        ...state.cartItems,
+        [action.payload]: {
+          items: newObjItems,
+          totalPrice: getTotalPrice(newObjItems),
+        },
+      };
+
+      const totalCount = getTotalSum(newItems, 'items.length');
+      const totalPrice = getTotalSum(newItems, 'totalPrice');
+
+      return {
+        ...state,
+        cartItems: newItems,
+        totalCount,
+        totalPrice,
+      };
+    }
+
     default:
       return state;
   }

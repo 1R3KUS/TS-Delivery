@@ -40,7 +40,6 @@ const Cart: FunctionComponent = () => {
                 />
               ))}
           </div>
-
           <div className="cart__footer">
             <div className="cart__sum">
               <h1>
